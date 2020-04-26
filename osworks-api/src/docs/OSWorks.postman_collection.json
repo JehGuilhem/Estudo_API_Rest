@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "b3a3862e-fcb6-4e8c-a615-dc54db3c7a98",
+		"name": "OSWorks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Clientes - Listar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clientes - Adicionar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Paulo\",\n\t\"email\": \"p.vsilva@uol.com.br\",\n\t\"telefone\": \"55 11 98311 8849\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clientes - Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"nome\": \"Lincoln Ceretti\",\n        \"email\": \"lincolncerettigomes@gmail.com\",\n        \"telefone\": \"55 16 99799 2929\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clientes/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clientes - Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"nome\": \"Gislaine\",\n        \"email\": \"gislaineguilhem@uol.com.br\",\n        \"telefone\": \"55 11 98627 0930\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clientes/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clientes - Buscar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/clientes/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Ordem Serviço",
+			"item": [
+				{
+					"name": "Ordens Serviço - Adicionar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 4,\n\t\"cliente\":{\n\t\t\"id\": 2,\n\t\t\"nome\": \"Pedro Fernandes\"\n\t},\n\t\"descricao\": \"Reparo de notebook com placa de video cagada\",\n\t\"preco\": 550.60\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ordens-servico",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ordens-servico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comentário - Adicionar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"descricao\": \"Troca de bateria efetuada\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ordens-servico/5/comentarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ordens-servico",
+								"5",
+								"comentarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comentário - Listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 4,\n\t\"cliente\":{\n\t\t\"id\": 2,\n\t\t\"nome\": \"Pedro Fernandes\"\n\t},\n\t\"descricao\": \"Reparo de notebook com placa de video cagada\",\n\t\"preco\": 550.60\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/ordens-servico/5/comentarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ordens-servico",
+								"5",
+								"comentarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ordens Serviço - Listar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/ordens-servico",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ordens-servico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ordens Serviço - Buscar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/ordens-servico/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ordens-servico",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ordens Serviço - Finalizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/ordens-servico/1/finalizacao",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ordens-servico",
+								"1",
+								"finalizacao"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
